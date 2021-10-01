@@ -1,14 +1,15 @@
 function createCategorie(req, res) {
     let Categorie = require('../models/Categorie');
     let newCategorie = Categorie ({
-        title: req.body.title,
-        description : req.body.description
+        name: req.body.name,
+        description : req.body.description,
+        boutique : req.body.boutique
     });
   
     newCategorie.save()
     .then((savedCategorie) => {
 
-        //send back the created Categorie
+        //send back the created Todo
         res.json(savedCategorie);
             
     }, (err) => {
@@ -46,8 +47,9 @@ function updateCategorie(req, res) {
     let Categorie = require("../models/Categorie");
 
     Categorie.findByIdAndUpdate({_id: req.params.id}, 
-        {title : req.body.title, 
-        description : req.body.description}, 
+        {name : req.body.name, 
+        description : req.body.description,
+        boutique : req.body.boutique}, 
         {new : true})
     .then((updatedCategorie) => {
         res.status(200).json(updatedCategorie);
@@ -68,8 +70,10 @@ function deleteCategorie(req, res) {
     });
  }
 
+
 module.exports.create = createCategorie;
 module.exports.reads = readCategories;
 module.exports.read = readCategorie;
 module.exports.delete = deleteCategorie;
 module.exports.update = updateCategorie;
+

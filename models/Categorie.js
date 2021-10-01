@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
+const boutique = require('./boutique');
 
 var Schema = mongoose.Schema;
 
-var Categorie = new Schema({
-    nom : String,
-    description : String
+var CategorieSchema = new Schema({
+  name : String,
+  description : String,
+  boutique : String
 });
 
-module.exports = mongoose.model('Projet', Categorie);
+module.exports = mongoose.model('Categorie', CategorieSchema);

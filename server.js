@@ -62,7 +62,7 @@ const infoLogger = loggers.get('infoLogger');
 
 //Connecting to MongoDB (async/await approach)
 const connectDb = async () => {
-    await mongoose.connect('mongodb://localhost:27017/Boutique', {useNewUrlParser: true, useUnifiedTopology : true}).then(
+    await mongoose.connect('mongodb://localhost:27017/boutique', {useNewUrlParser: true, useUnifiedTopology : true}).then(
         () => {
             console.log(chalk.green(`Connected to database`))
             infoLogger.info("Connected to database");
@@ -78,14 +78,14 @@ const connectDb = async () => {
 
   
 //Accessing the routes for the user
-const BoutiqueRoutes = require('./routes/Boutique');
-const CategorieRoutes = require('./routes/Categorie');
-const ProduitRoutes = require('./routes/Produit');
+const boutiqueRoutes = require('./routes/boutique');
+const categorieRoutes = require('./routes/categorie');
+const produitRoutes = require('./routes/produit');
 
 //Acces the routes 
-app.use(BoutiqueRoutes);
-app.use(CategorieRoutes);
-app.use(ProduitRoutes);
+app.use(boutiqueRoutes);
+app.use(categorieRoutes);
+app.use(produitRoutes);
 
 //When there is no route that caught the incoming request
 //use the 404 middleware

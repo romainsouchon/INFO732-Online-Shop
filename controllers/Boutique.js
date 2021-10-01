@@ -1,50 +1,52 @@
 function createBoutique(req, res) {
-    let Boutique = require('../models/Boutique');
+    let Boutique = require('../models/boutique');
     let newBoutique = Boutique ({
-        title: req.body.title,
+        name: req.body.name,
         description : req.body.description
     });
-
+  
     newBoutique.save()
     .then((savedBoutique) => {
 
-        //send back the created Boutique
+        //send back the created Todo
         res.json(savedBoutique);
             
     }, (err) => {
         res.status(400).json(err)
     });
+
 }
 
 function readBoutiques(req, res) {
 
-    let Boutique = require("../models/Boutique");
+    let Boutique = require("../models/boutique");
 
     Boutique.find({})
-    .then((Boutiques) => {
-        res.status(200).json(Boutiques);
+    .then((boutiques) => {
+        res.status(200).json(boutiques);
     }, (err) => {
         res.status(500).json(err);
     });
  }
 
- function readBoutique(req, res) {
+function readBoutique(req, res) {
 
-    let Boutique = require("../models/Boutique");
+    let Boutique = require("../models/boutique");
 
     Boutique.findById({_id : req.params.id})
-    .then((Boutique) => {
-        res.status(200).json(Boutique);
+    .then((boutique) => {
+        res.status(200).json(boutique);
     }, (err) => {
         res.status(500).json(err);
     });
  }
- function updateBoutique(req, res) {
 
-    let Boutique = require("../models/Boutique");
+function updateBoutique(req, res) {
+
+    let Boutique = require("../models/boutique");
 
     Boutique.findByIdAndUpdate({_id: req.params.id}, 
-        {title : req.body.title, 
+        {name : req.body.name, 
         description : req.body.description}, 
         {new : true})
     .then((updatedBoutique) => {
@@ -56,7 +58,7 @@ function readBoutiques(req, res) {
 
 function deleteBoutique(req, res) {
 
-    let Boutique = require("../models/Boutique");
+    let Boutique = require("../models/boutique");
 
     Boutique.findOneAndRemove({_id : req.params.id})
     .then((deletedBoutique) => {
@@ -72,3 +74,4 @@ module.exports.reads = readBoutiques;
 module.exports.read = readBoutique;
 module.exports.delete = deleteBoutique;
 module.exports.update = updateBoutique;
+

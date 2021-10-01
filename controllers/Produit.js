@@ -1,14 +1,15 @@
 function createProduit(req, res) {
     let Produit = require('../models/Produit');
     let newProduit = Produit ({
-        title: req.body.title,
-        description : req.body.description
+        name: req.body.name,
+        description : req.body.description,
+        categorie : req.body.categorie
     });
   
     newProduit.save()
     .then((savedProduit) => {
 
-        //send back the created Produit
+        //send back the created Todo
         res.json(savedProduit);
             
     }, (err) => {
@@ -46,8 +47,9 @@ function updateProduit(req, res) {
     let Produit = require("../models/Produit");
 
     Produit.findByIdAndUpdate({_id: req.params.id}, 
-        {title : req.body.title, 
-        description : req.body.description}, 
+        {name : req.body.name, 
+        description : req.body.description,
+        categorie : req.body.categorie}, 
         {new : true})
     .then((updatedProduit) => {
         res.status(200).json(updatedProduit);
@@ -68,8 +70,10 @@ function deleteProduit(req, res) {
     });
  }
 
+
 module.exports.create = createProduit;
 module.exports.reads = readProduits;
 module.exports.read = readProduit;
 module.exports.delete = deleteProduit;
 module.exports.update = updateProduit;
+

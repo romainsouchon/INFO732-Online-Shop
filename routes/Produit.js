@@ -2,52 +2,39 @@
 const router = require('express').Router();
 
 //Access the controllers
-const controller = require('../controllers/Produit');
+const controllerProduit = require('../controllers/produit');
 
 //CREATE
-router.post("/Produit", (req, res) => {
+router.post("/produit", (req, res) => {
 
-    controller.create(req, res);
+    controllerProduit.create(req, res);
 
 });
 
 //READ
-router.get("/Produits", (req, res) => {
+router.get("/produits", (req, res) => {
     
-    controller.reads(req, res);
+    controllerProduit.reads(req, res);
 
 });
 
-router.get("/Produit/:id", (req, res) => {
-    
-    controller.read(req, res);
+router.get("/produit/:id", (req, res) => {
+
+    controllerProduit.read(req, res);
 
 });
 
 //UPDATE
-router.put("/Produit/:id", (req, res) => {
+router.put("/produit/:id", (req, res) => {
     
-    controller.update(req, res);
+    controllerProduit.update(req, res);
 
 });
 
 //DELETE
-router.delete("/Produit/:id", (req, res) => {
+router.delete("/produit/:id", (req, res) => {
     
-    controller.delete(req, res);
-
-});
-
-//COMPLETED
-router.post("/Produit/:id/done", (req, res) => {
-
-    controller.done(req, res);
-
-});
-
-router.post("/Produit/:id/undone", (req, res) => {
-
-    controller.undone(req, res);
+    controllerProduit.delete(req, res);
 
 });
 

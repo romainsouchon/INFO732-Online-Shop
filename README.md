@@ -1,1 +1,1 @@
-# INFO734-Online-Shop
+Online shop project by Quentin Pascal

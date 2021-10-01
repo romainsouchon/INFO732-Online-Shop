@@ -2,52 +2,39 @@
 const router = require('express').Router();
 
 //Access the controllers
-const controller = require('../controllers/Boutique');
+const controllerBoutique = require('../controllers/boutique');
 
 //CREATE
-router.post("/Boutique", (req, res) => {
+router.post("/boutique", (req, res) => {
 
-    controller.create(req, res);
+    controllerBoutique.create(req, res);
 
 });
 
 //READ
-router.get("/Boutiques", (req, res) => {
+router.get("/boutiques", (req, res) => {
     
-    controller.reads(req, res);
+    controllerBoutique.reads(req, res);
 
 });
 
-router.get("/Boutique/:id", (req, res) => {
+router.get("/boutique/:id", (req, res) => {
     
-    controller.read(req, res);
+    controllerBoutique.read(req, res);
 
 });
 
 //UPDATE
-router.put("/Boutique/:id", (req, res) => {
+router.put("/boutique/:id", (req, res) => {
     
-    controller.update(req, res);
+    controllerBoutique.update(req, res);
 
 });
 
 //DELETE
-router.delete("/Boutique/:id", (req, res) => {
+router.delete("/boutique/:id", (req, res) => {
     
-    controller.delete(req, res);
-
-});
-
-//COMPLETED
-router.post("/Boutique/:id/done", (req, res) => {
-
-    controller.done(req, res);
-
-});
-
-router.post("/Boutique/:id/undone", (req, res) => {
-
-    controller.undone(req, res);
+    controllerBoutique.delete(req, res);
 
 });
 
