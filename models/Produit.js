@@ -7,7 +7,7 @@ var ProduitSchema = new Schema({
   name : String,
   description : String,
   price : Number,
-  categorie : String
+  categorie : { type: Schema.Types.ObjectId, ref: 'Categorie' }
   
 });
 

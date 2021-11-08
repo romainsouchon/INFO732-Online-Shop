@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var CategorieSchema = new Schema({
   name : String,
   description : String,
-  boutique : String
+  boutique : { type: Schema.Types.ObjectId, ref: 'Boutique' }
 });
 
 module.exports = mongoose.model('Categorie', CategorieSchema);
