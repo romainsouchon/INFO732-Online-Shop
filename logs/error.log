@@ -18,3 +18,11 @@ Fri, 01 Oct 2021 13:47:26 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Fri, 01 Oct 2021 13:47:33 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/categorie/?6151c278c20e3c32ac199f0f
 Fri, 01 Oct 2021 13:50:38 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/categorie
 Fri, 01 Oct 2021 14:16:48 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/boutique
+Fri, 01 Oct 2021 14:29:48 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Boutique
+Fri, 01 Oct 2021 14:30:17 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Boutiques
+Fri, 01 Oct 2021 14:31:36 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Boutique
+Fri, 01 Oct 2021 14:33:45 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Categories
+Mon, 08 Nov 2021 14:10:11 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Produit
+Mon, 08 Nov 2021 14:10:28 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Categorie
+Mon, 08 Nov 2021 14:14:28 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Categorie
+Mon, 08 Nov 2021 14:19:41 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/

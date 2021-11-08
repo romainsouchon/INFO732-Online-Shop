@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-const categorie = require('./categorie');
+
 
 var Schema = mongoose.Schema;
 

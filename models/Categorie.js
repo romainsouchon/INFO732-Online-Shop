@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-const boutique = require('./boutique');
 
 var Schema = mongoose.Schema;
 
