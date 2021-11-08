@@ -3,7 +3,8 @@ function createProduit(req, res) {
     let newProduit = Produit ({
         name: req.body.name,
         description : req.body.description,
-        categorie : req.body.categorie
+        categorie : req.body.categorie,
+        price : req.body.price
     });
   
     newProduit.save()
@@ -49,7 +50,8 @@ function updateProduit(req, res) {
     Produit.findByIdAndUpdate({_id: req.params.id}, 
         {name : req.body.name, 
         description : req.body.description,
-        categorie : req.body.categorie}, 
+        categorie : req.body.categorie,
+        price : req.body.price}, 
         {new : true})
     .then((updatedProduit) => {
         res.status(200).json(updatedProduit);

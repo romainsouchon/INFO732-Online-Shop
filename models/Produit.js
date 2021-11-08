@@ -6,9 +6,8 @@ var Schema = mongoose.Schema;
 var ProduitSchema = new Schema({
   name : String,
   description : String,
-  price : Number,
-  categorie : { type: Schema.Types.ObjectId, ref: 'Categorie' }
-  
+  categorie : { type: Schema.Types.ObjectId, ref: 'Categorie' },
+  price : Number
 });
 
 module.exports = mongoose.model('Produit', ProduitSchema);
