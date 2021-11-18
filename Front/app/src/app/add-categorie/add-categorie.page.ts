@@ -29,7 +29,7 @@ export class AddCategoriePage implements OnInit {
   async saveCategorie(){
     await this.api.createCategorie(this.categorie.value)
     .subscribe(res => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/categorie']);
       }, (err) => {
         console.log(err);
       });

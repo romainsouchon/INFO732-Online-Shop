@@ -5,7 +5,7 @@ import { RestService } from '../rest.service';
 import { ActivatedRoute, Router  } from '@angular/router';
 
 @Component({
-  selector: 'app-categorie-add',
+  selector: 'app-produit-add',
   templateUrl: './add-produit.page.html',
   styleUrls: ['./add-produit.page.scss'],
 })
@@ -29,7 +29,7 @@ export class AddProduitPage implements OnInit {
   async saveProduit(){
     await this.api.createProduit(this.produit.value)
     .subscribe(res => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/produit']);
       }, (err) => {
         console.log(err);
       });
