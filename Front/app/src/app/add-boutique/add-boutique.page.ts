@@ -29,7 +29,7 @@ export class AddBoutiquePage implements OnInit {
   async saveBoutique(){
     await this.api.createBoutique(this.boutique.value)
     .subscribe(res => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/boutique/']);
       }, (err) => {
         console.log(err);
       });

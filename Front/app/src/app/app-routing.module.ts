@@ -30,11 +30,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'add',
+    path: 'add-categorie',
     loadChildren: () => import('./add-categorie/add-categorie.module').then( m => m.AddCategoriePageModule)
   },
   {
-    path: 'view/:id',
+    path: 'view-categorie/:id',
     loadChildren: () => import('./view-categorie/view-categorie.module').then( m => m.ViewCategoriePageModule)
   },
 
@@ -48,11 +48,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'add',
+    path: 'add-produit',
     loadChildren: () => import('./add-produit/add-produit.module').then( m => m.AddProduitPageModule)
   },
   {
-    path: 'view/:id',
+    path: 'view-produit/:id',
     loadChildren: () => import('./view-produit/view-produit.module').then( m => m.ViewProduitPageModule)
   },
 ];

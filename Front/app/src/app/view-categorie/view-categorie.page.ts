@@ -12,7 +12,7 @@ export class ViewCategoriePage implements OnInit {
   categorie : any;
   api : RestService;
   id : string;
-  title : string;
+  name : string;
   description : string;
 
   constructor(public restapi: RestService, 
@@ -34,7 +34,7 @@ export class ViewCategoriePage implements OnInit {
       .subscribe(res => {
         console.log(res);
         this.categorie = res;
-        this.title = this.categorie.title;
+        this.name = this.categorie.name;
         this.description = this.categorie.description;
         loading.dismiss();
       }, err => {
@@ -48,7 +48,7 @@ export class ViewCategoriePage implements OnInit {
     await this.api.updateCategorie(this.categorie._id, this.categorie)
     .subscribe(res => {
         console.log(res);
-        this.router.navigate(['/']);
+        this.router.navigate(['/categorie/']);
       }, (err) => {
         console.log(err);
       });
@@ -67,10 +67,10 @@ export class ViewCategoriePage implements OnInit {
   save() {
 
     console.log(this.description);
-    console.log(this.title);
+    console.log(this.name);
     console.log(this.categorie._id);
 
-    this.categorie.title = this.title;
+    this.categorie.title = this.name;
     this.categorie.description = this.description;
 
     this.saveCategorie();

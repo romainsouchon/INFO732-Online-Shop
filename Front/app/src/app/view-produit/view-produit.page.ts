@@ -12,7 +12,7 @@ export class ViewProduitPage implements OnInit {
   produit : any;
   api : RestService;
   id : string;
-  title : string;
+  name : string;
   description : string;
 
   constructor(public restapi: RestService, 
@@ -34,7 +34,7 @@ export class ViewProduitPage implements OnInit {
       .subscribe(res => {
         console.log(res);
         this.produit = res;
-        this.title = this.produit.title;
+        this.name = this.produit.name;
         this.description = this.produit.description;
         loading.dismiss();
       }, err => {
@@ -67,10 +67,10 @@ export class ViewProduitPage implements OnInit {
   save() {
 
     console.log(this.description);
-    console.log(this.title);
+    console.log(this.name);
     console.log(this.produit._id);
 
-    this.produit.title = this.title;
+    this.produit.name = this.name;
     this.produit.description = this.description;
 
     this.saveProduit();

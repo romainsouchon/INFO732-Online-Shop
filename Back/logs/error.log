@@ -26,3 +26,11 @@ Mon, 08 Nov 2021 14:10:11 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Mon, 08 Nov 2021 14:10:28 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Categorie
 Mon, 08 Nov 2021 14:14:28 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/Categorie
 Mon, 08 Nov 2021 14:19:41 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/
+Thu, 18 Nov 2021 10:24:01 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77
+Thu, 18 Nov 2021 10:24:04 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77
+Thu, 18 Nov 2021 10:24:05 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77
+Thu, 18 Nov 2021 10:24:05 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77
+Thu, 18 Nov 2021 10:24:05 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77
+Thu, 18 Nov 2021 10:24:06 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77
+Thu, 18 Nov 2021 10:24:06 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77
+Thu, 18 Nov 2021 10:24:06 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/todo/6189394fddbdc134d8fc1e77

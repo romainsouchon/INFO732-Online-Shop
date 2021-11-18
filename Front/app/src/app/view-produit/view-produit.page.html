@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button routerLink="/"><ion-icon slot="icon-only" name="arrow-round-back"></ion-icon></ion-button>
+      <ion-button routerLink="/produit/"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
     </ion-buttons>
     <ion-title>
-      <span *ngIf="viewproduit" ngDefaultControl [(ngModel)]="title">{{viewproduit.title}}</span>
+      <span *ngIf="produit" ngDefaultControl [(ngModel)]="name">{{produit.name}}</span>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="save()"> <ion-icon slot="icon-only" name="save"></ion-icon></ion-button>
@@ -15,12 +15,12 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-input value="{{viewproduit.title}}" rows="10" *ngIf="viewproduit" ngDefaultControl [(ngModel)]="title"></ion-input>
+    <ion-input value="{{produit.name}}" rows="10" *ngIf="produit" ngDefaultControl [(ngModel)]="name"></ion-input>
   </ion-item>
 
 
   <ion-item>
-    <ion-textarea value="{{viewproduit.description}}" rows="10" *ngIf="viewproduit" ngDefaultControl [(ngModel)]="description"></ion-textarea>
+    <ion-textarea value="{{produit.description}}" rows="10" *ngIf="produit" ngDefaultControl [(ngModel)]="description"></ion-textarea>
   </ion-item>
 
 </ion-content>
