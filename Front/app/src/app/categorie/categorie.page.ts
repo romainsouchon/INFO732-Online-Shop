@@ -13,6 +13,7 @@ export class CategoriePage {
 
   categories : any;
   api : RestService;
+  boutique : string;
 
   constructor(public restapi: RestService, 
     public loadingController: LoadingController, 

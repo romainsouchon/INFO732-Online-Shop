@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./categorie/categorie.module').then( m => m.CategoriePageModule)
   },
   {
+    path: 'categorie/:id',
+    loadChildren: () => import('./categorie/categorie.module').then( m => m.CategoriePageModule)
+  },
+  {
     path: '',
     redirectTo: 'categorie',
     pathMatch: 'full'
@@ -34,7 +38,7 @@ const routes: Routes = [
     loadChildren: () => import('./add-categorie/add-categorie.module').then( m => m.AddCategoriePageModule)
   },
   {
-    path: 'view-categorie/:id',
+    path: 'view/:id',
     loadChildren: () => import('./view-categorie/view-categorie.module').then( m => m.ViewCategoriePageModule)
   },
 
@@ -52,7 +56,7 @@ const routes: Routes = [
     loadChildren: () => import('./add-produit/add-produit.module').then( m => m.AddProduitPageModule)
   },
   {
-    path: 'view-produit/:id',
+    path: 'view/:id',
     loadChildren: () => import('./view-produit/view-produit.module').then( m => m.ViewProduitPageModule)
   },
 ];
