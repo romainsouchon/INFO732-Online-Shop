@@ -13,7 +13,7 @@ router.post("/categorie", (req, res) => {
 });
 
 //READ
-router.get("/categories", (req, res) => {
+router.get("/categories/:id", (req, res) => {
     
     controllerCategorie.reads(req, res);
 

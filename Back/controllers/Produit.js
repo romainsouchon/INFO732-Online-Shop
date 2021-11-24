@@ -23,7 +23,7 @@ function readProduits(req, res) {
 
     let Produit = require("../models/Produit");
 
-    Produit.find({})
+    Produit.find({categorie : req.params.id})
     .then((Produits) => {
         res.status(200).json(Produits);
     }, (err) => {

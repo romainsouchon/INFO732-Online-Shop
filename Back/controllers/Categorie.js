@@ -22,7 +22,7 @@ function readCategories(req, res) {
 
     let Categorie = require("../models/Categorie");
 
-    Categorie.find({})
+    Categorie.find({boutique : req.params.id})
     .then((Categories) => {
         res.status(200).json(Categories);
     }, (err) => {
