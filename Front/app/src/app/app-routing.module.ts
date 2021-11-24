@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./categorie/categorie.module').then( m => m.CategoriePageModule)
   },
   {
+    path: 'categorie/:id',
+    loadChildren: () => import('./categorie/categorie.module').then( m => m.CategoriePageModule)
+  },
+  {
     path: '',
     redirectTo: 'categorie',
     pathMatch: 'full'
