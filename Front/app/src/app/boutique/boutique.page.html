@@ -17,7 +17,7 @@
 <ion-content>
   <ion-list *ngFor="let boutique of boutiques">
     <ion-item-sliding #item>
-      <ion-item routerLink="/categorie" routerDirection="forward">
+      <ion-item routerLink="/categories/{{boutique._id}}" routerDirection="forward">
         {{boutique.name}}
       </ion-item>
 

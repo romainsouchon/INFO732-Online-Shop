@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { LoadingController, NavController } from '@ionic/angular';
 import { RestService } from '../rest.service';
-import {Router} from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorie',
@@ -14,10 +14,12 @@ export class CategoriePage {
   categories : any;
   api : RestService;
   boutique : string;
+  id : any;
 
   constructor(public restapi: RestService, 
     public loadingController: LoadingController, 
-    public navController : NavController, 
+    public navController : NavController,
+    private route: ActivatedRoute,  
     public router : Router) {
 
     this.api = restapi;
@@ -29,12 +31,10 @@ export class CategoriePage {
     });
 
     await loading.present();
-    await this.api.getCategories()
+    await this.api.getCategories(this.id)
       .subscribe(res => {
         console.log(res);
-        this.categories = res.filter((aCategorie) => {
-          return true
-        });
+        this.categories = res
         loading.dismiss();
       }, err => {
         console.log(err);
@@ -58,6 +58,10 @@ export class CategoriePage {
   }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((params : ParamMap)=> {
+      this.id=params.get('id');
+    });
+    console.log("Current id: " + this.id);
     this.getCategories();
   }
 

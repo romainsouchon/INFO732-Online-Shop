@@ -45,9 +45,9 @@ export class RestService {
 
   }
 
-  getCategories(): Observable<any> {
+  getCategories(id:any): Observable<any> {
 
-    const apiUrl = "http://localhost:3000/categories";
+    const apiUrl = "http://localhost:3000/categories/" + id;
 
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
@@ -55,9 +55,9 @@ export class RestService {
 
   }
 
-  getProduits(): Observable<any> {
+  getProduits(id:any): Observable<any> {
 
-    const apiUrl = "http://localhost:3000/produits";
+    const apiUrl = "http://localhost:3000/produits/"+ id;
 
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
