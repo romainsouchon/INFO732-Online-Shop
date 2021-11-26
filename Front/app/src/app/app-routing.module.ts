@@ -34,7 +34,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'add-categorie',
+    path: 'add-categorie/:id',
     loadChildren: () => import('./add-categorie/add-categorie.module').then( m => m.AddCategoriePageModule)
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'produit',
+    path: 'produit/:id',
     loadChildren: () => import('./produit/produit.module').then( m => m.ProduitPageModule)
   },
   {

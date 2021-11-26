@@ -3,7 +3,7 @@ function createCategorie(req, res) {
     let newCategorie = Categorie ({
         name: req.body.name,
         description : req.body.description,
-        boutique : req.body.boutique
+        idboutique : req.body.idboutique,
     });
   
     newCategorie.save()
@@ -22,7 +22,7 @@ function readCategories(req, res) {
 
     let Categorie = require("../models/Categorie");
 
-    Categorie.find({boutique : req.params.id})
+    Categorie.find({idboutique : req.params.id})
     .then((Categories) => {
         res.status(200).json(Categories);
     }, (err) => {
@@ -49,7 +49,7 @@ function updateCategorie(req, res) {
     Categorie.findByIdAndUpdate({_id: req.params.id}, 
         {name : req.body.name, 
         description : req.body.description,
-        boutique : req.body.boutique}, 
+        idboutique : req.body.idboutique}, 
         {new : true})
     .then((updatedCategorie) => {
         res.status(200).json(updatedCategorie);

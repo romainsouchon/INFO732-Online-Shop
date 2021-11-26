@@ -14,7 +14,7 @@ export class CategoriePage {
   categories : any;
   api : RestService;
   boutique : string;
-  id : any;
+  id : String;
 
   constructor(public restapi: RestService, 
     public loadingController: LoadingController, 
@@ -43,6 +43,24 @@ export class CategoriePage {
 
   }
 
+  async getBoutique() {
+    const loading = await this.loadingController.create({
+      message: 'Loading'
+    });
+
+    await loading.present();
+    await this.api.getBoutique(this.id)
+      .subscribe(res => {
+        console.log(res);
+        this.boutique = res
+        loading.dismiss();
+      }, err => {
+        console.log(err);
+        loading.dismiss();
+      });
+
+  }
+
   async deleteCategorie(id:any){
     await this.api.deleteCategorie(id)
     .subscribe(res => {
@@ -58,11 +76,13 @@ export class CategoriePage {
   }
 
   ngOnInit() {
+    
     this.route.paramMap.subscribe((params : ParamMap)=> {
       this.id=params.get('id');
     });
     console.log("Current id: " + this.id);
     this.getCategories();
+    this.getBoutique();
   }
 
   ionViewWillEnter() {

@@ -14,6 +14,7 @@ export class ViewCategoriePage implements OnInit {
   id : string;
   name : string;
   description : string;
+  idboutique: String;
 
   constructor(public restapi: RestService, 
     public loadingController: LoadingController, 
@@ -36,6 +37,7 @@ export class ViewCategoriePage implements OnInit {
         this.categorie = res;
         this.name = this.categorie.name;
         this.description = this.categorie.description;
+        this.idboutique = this.categorie.idboutique;
         loading.dismiss();
       }, err => {
         console.log(err);
@@ -48,7 +50,7 @@ export class ViewCategoriePage implements OnInit {
     await this.api.updateCategorie(this.categorie._id, this.categorie)
     .subscribe(res => {
         console.log(res);
-        this.router.navigate(['/categorie/']);
+        this.router.navigate(['/categorie/' + this.idboutique]);
       }, (err) => {
         console.log(err);
       });
@@ -58,7 +60,7 @@ export class ViewCategoriePage implements OnInit {
     await this.api.deleteCategorie(this.categorie._id)
     .subscribe(res => {
         console.log(res);
-        this.router.navigate(['/']);
+        this.router.navigate(['/categorie/' + this.idboutique]);
       }, (err) => {
         console.log(err);
       });
@@ -70,7 +72,7 @@ export class ViewCategoriePage implements OnInit {
     console.log(this.name);
     console.log(this.categorie._id);
 
-    this.categorie.title = this.name;
+    this.categorie.name = this.name;
     this.categorie.description = this.description;
 
     this.saveCategorie();

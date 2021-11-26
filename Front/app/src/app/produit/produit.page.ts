@@ -15,6 +15,7 @@ export class ProduitPage {
   api : RestService;
   id : any;
   categorie: any;
+  idboutique:String;
 
   constructor(public restapi: RestService, 
     public loadingController: LoadingController, 
@@ -33,10 +34,7 @@ export class ProduitPage {
     await loading.present();
     await this.api.getProduits(this.id)
       .subscribe(res => {
-        console.log(res);
-        this.produits = res.filter((aProduit) => {
-          return true
-        });
+        this.produits = res
         loading.dismiss();
       }, err => {
         console.log(err);
@@ -53,8 +51,9 @@ export class ProduitPage {
     await loading.present();
     await this.api.getCategorie(this.id)
       .subscribe(res => {
-        console.log(res);
         this.categorie = res;
+        console.log(this.categorie);
+        this.idboutique = this.categorie.idboutique;
         loading.dismiss();
       }, err => {
         console.log(err);
@@ -66,7 +65,6 @@ export class ProduitPage {
   async deleteProduit(id:any){
     await this.api.deleteProduit(id)
     .subscribe(res => {
-        console.log(res);
         this.ngOnInit();
       }, (err) => {
         console.log(err);
@@ -82,9 +80,8 @@ export class ProduitPage {
       this.id=params.get('id');
     });
     this.getCategorie();
-    console.log("Current id: " + this.id);
     this.getProduits();
-  }
+  } 
 
   ionViewWillEnter() {
     this.ngOnInit();
