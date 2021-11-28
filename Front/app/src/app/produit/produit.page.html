@@ -8,7 +8,7 @@
       Liste des produits
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button routerLink="/add-produit" routerDirection="forward">
+      <ion-button routerLink="/add-produit/{{id}}" routerDirection="forward">
         <ion-icon slot="icon-only" name="add-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -18,7 +18,7 @@
 <ion-content>
   <ion-list *ngFor="let produit of produits">
     <ion-item-sliding #item>
-      <ion-item>
+      <ion-item> <!--routerLink="/info-produit/{{produit._id}}"-->
         {{produit.name}}
       </ion-item>
 

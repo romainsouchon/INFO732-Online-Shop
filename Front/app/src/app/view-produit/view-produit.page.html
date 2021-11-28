@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button routerLink="/produit/"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+      <ion-button routerLink="/produits/{{idcategorie}}"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
     </ion-buttons>
     <ion-title>
       <span *ngIf="produit" ngDefaultControl [(ngModel)]="name">{{produit.name}}</span>
@@ -21,6 +21,10 @@
 
   <ion-item>
     <ion-textarea value="{{produit.description}}" rows="10" *ngIf="produit" ngDefaultControl [(ngModel)]="description"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" value="{{produit.price}}" rows="10" *ngIf="produit" ngDefaultControl [(ngModel)]="price"></ion-input>
   </ion-item>
 
 </ion-content>

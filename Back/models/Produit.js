@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var ProduitSchema = new Schema({
   name : String,
   description : String,
-  categorie : { type: Schema.Types.ObjectId, ref: 'Categorie' },
+  idcategorie : String,
   price : Number
 });
 

@@ -30,6 +30,7 @@ function readCategories(req, res) {
     });
  }
 
+ 
 function readCategorie(req, res) {
 
     let Categorie = require("../models/Categorie");

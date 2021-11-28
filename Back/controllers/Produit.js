@@ -3,8 +3,8 @@ function createProduit(req, res) {
     let newProduit = Produit ({
         name: req.body.name,
         description : req.body.description,
-        categorie : req.body.categorie,
-        price : req.body.price
+        idcategorie : req.body.idcategorie,
+        price : req.body.price,
     });
   
     newProduit.save()
@@ -23,7 +23,7 @@ function readProduits(req, res) {
 
     let Produit = require("../models/Produit");
 
-    Produit.find({categorie : req.params.id})
+    Produit.find({idcategorie : req.params.id})
     .then((Produits) => {
         res.status(200).json(Produits);
     }, (err) => {
@@ -50,7 +50,7 @@ function updateProduit(req, res) {
     Produit.findByIdAndUpdate({_id: req.params.id}, 
         {name : req.body.name, 
         description : req.body.description,
-        categorie : req.body.categorie,
+        idcategorie : req.body.idcategorie,
         price : req.body.price}, 
         {new : true})
     .then((updatedProduit) => {

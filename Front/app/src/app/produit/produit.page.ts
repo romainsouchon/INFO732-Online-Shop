@@ -13,7 +13,7 @@ export class ProduitPage {
 
   produits : any;
   api : RestService;
-  id : any;
+  id : String;
   categorie: any;
   idboutique:String;
 

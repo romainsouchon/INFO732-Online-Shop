@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button routerLink="/"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+      <ion-button routerLink="/produit/{{id}}"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
     </ion-buttons>
     <ion-title>
       Ajouter un produit
@@ -27,6 +27,12 @@
       </ion-item>
       <ion-item>
         <ion-textarea formControlName="description" rows="10"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Prix</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" formControlName="price"></ion-input>
       </ion-item>
   </form>
 </ion-content>

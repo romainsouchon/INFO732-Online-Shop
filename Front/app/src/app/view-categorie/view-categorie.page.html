@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button routerLink="/categorie/{{idboutique}}"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+      <ion-button routerLink="/categories/{{idboutique}}"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
     </ion-buttons>
     <ion-title>
       <span *ngIf="categorie" ngDefaultControl [(ngModel)]="name">{{categorie.name}}</span>
@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-input value="{{categorie.title}}" rows="10" *ngIf="categorie" ngDefaultControl [(ngModel)]="name"></ion-input>
+    <ion-input value="{{categorie.name}}" rows="10" *ngIf="categorie" ngDefaultControl [(ngModel)]="name"></ion-input>
   </ion-item>
 
 
