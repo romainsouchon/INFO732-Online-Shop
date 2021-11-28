@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/boutique"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>
+      Liste de categories
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/add-categorie/{{id}}" routerDirection="forward">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let categorie of categories">
+    <ion-item-sliding #item>
+      <ion-item routerLink="/produits/{{categorie._id}}" routerDirection="forward">
+        {{categorie.name}}
+      </ion-item>
+
+      <ion-item-options side="end">
+        <button ion-button color="light" routerLink="/view-categorie/{{categorie._id}}">Modifier</button>
+        <button ion-button (click)="delete([categorie._id])" color="danger">Supprimer</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

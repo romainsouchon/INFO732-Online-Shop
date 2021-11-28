@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+       <ion-button routerLink="/produits/{{idcategorie}}"><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>
+      <span *ngIf="produit" ngDefaultControl [(ngModel)]="name">{{produit.name}}</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Partie du programme qui fonctionnait mal et qui avait pour but d'afficher les informations des produits en cliquant dessus-->
+
+<ion-content padding>
+
+  <ion-item>
+    Produit : {{produit.name}}
+  </ion-item>
+
+  <ion-item>
+    Description : {{produit.description}}
+  </ion-item>
+
+  <ion-item>
+    Prix : {{produit.price}} €
+  </ion-item>
+
+</ion-content>
+
+<ion-buttons slot="end">
+  <ion-button><ion-icon name="cart-outline"></ion-icon></ion-button>
+</ion-buttons>
